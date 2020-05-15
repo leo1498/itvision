@@ -1,0 +1,206 @@
+.clients{
+   margin: 30px 0;
+
+   @media #{$mobile} {
+      margin: 70px 0;
+   }
+
+   &.loading{
+      opacity: .3;
+   }
+
+   &__wrapper{
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 25px;
+      justify-items: center;
+
+      @media #{$mobile} {
+         grid-gap: 30px;
+         grid-template-columns: repeat(2, 1fr);
+      }
+      @media #{$tablet} {
+         grid-gap: 50px;
+      }
+      @media #{$desktop} {
+         grid-gap: 50px 100px;
+      }
+   }
+}
+
+.client-tile{
+   display: flex;
+   flex-direction: column;
+   max-width: 504px;
+   background-color: rgba(#f0f0f0, .07);
+   animation: .3s appear;
+
+   &:hover,
+   &:active{
+
+      .h3{
+         color: map-get($map: $colors, $key: primary);
+      }
+   }
+
+   &__thumbnail{
+      position: relative;
+      display: block;
+      overflow: hidden;
+
+      &:hover{
+
+         .client-tile__full-desc{
+            display: block;
+         }
+      }
+ 
+      &--image{
+         display: block;
+         width: 100%;
+         height: 300px;
+         background-repeat: no-repeat;
+         background-size: cover;
+         background-position: center;
+
+         @media #{$mobile} {
+            height: 350px;
+         }
+         @media #{$sTablet} {
+            height: 400px;
+         }
+         @media #{$sDesktop} {
+            height: 504px;
+         }
+      }
+   }
+
+   &__full-desc{
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      background-color: rgba(#000, .85);
+      color: #fff;
+      padding: 15px;
+      padding-right: 40px;
+      font-weight: 100;
+      line-height: 1.5;
+      font-size: 1.3rem;
+      display: none;
+      animation: .3s slide;
+
+      @media #{$mobile} {
+         padding: 40px 30px;
+         padding-right: 60px;
+         font-size: 1.4rem;
+      }
+      @media #{$sTablet} {
+         font-size: 1.6rem;
+      }
+      @media #{$sDesktop} {
+         font-size: 2rem;
+         line-height: 1.8;
+      }
+
+      &::after{
+         bottom: 20px;
+         right: 25px;
+         @include arrow(35px, 1px, #fff, 135deg);
+
+         @media #{$mobile} {
+            bottom: 30px;
+         }
+         @media #{$tablet} {
+            right: 45px;
+         }
+      }
+   }
+
+   &__content{
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 auto;
+      justify-content: space-between;
+      padding: 20px 15px;
+
+      @media #{$mobile} {
+         padding: 25px;
+      }
+      @media #{$sTablet} {
+         padding: 35px 40px 25px;
+      }
+   }
+
+   &__text{
+
+      .h3{
+         display: block;
+         margin-bottom: 15px;
+         text-transform: uppercase;
+         font-size: 1.8rem;
+         color: #fff;
+         font-weight: 700;
+         transition: color .15s ease-in-out;
+
+         @media #{$mobile} {
+            margin-left: -5px;
+            font-size: 2.5rem;
+         }
+         @media #{$sDesktop} {
+            font-size: 3rem;
+         }
+      }
+
+      p{
+         font-size: 1.4rem;
+         font-weight: 100;
+         line-height: 1.5;
+
+         @media #{$mMobile} {
+            font-size: 1.3rem;
+         }
+         @media #{$mobile} {
+            font-size: 1.4rem;
+            line-height: 1.7;
+         }
+         @media #{$sDesktop} {
+            font-size: 1.8rem;
+         }
+      }
+   }
+
+   &__tags{
+      padding-top: 15px;
+
+      @media #{$mMobile} {
+         padding-top: 30px;
+      }
+      @media #{$mobile} {
+         padding-top: 60px;
+      }
+      @media #{$sDesktop} {
+         padding-top: 90px;
+      }
+
+      span{
+         color: #fff;
+         font-weight: 100;
+         position: relative;
+         font-size: 1.2rem;
+
+         @media #{$mobile} {
+            font-size: 1.4rem;
+         }
+         @media #{$sDesktop} {
+            font-size: 1.5rem;
+         }
+
+         &:not(:last-child)::after{
+            content: ' /'; 
+         }
+      }
+   }
+}

@@ -1,0 +1,290 @@
+@mixin input {
+   background: rgba(#f0f0f0, .07);
+   width: 100%;
+   height: 60px;
+   padding: 0 20px;
+   font-size: 1.6rem;
+   font-weight: 100;
+   outline: none;
+   border: none;
+   border-radius: 0;
+   color: #fff;
+   font-family: $fontComfortaa;
+   -webkit-appearance: none;
+
+   @media #{$mobile} {
+      height: 70px;
+      padding: 0 30px;
+      font-size: 1.8rem;
+   }
+   @media #{$sDesktop} {
+      height: 80px;
+      padding: 0 35px;
+   }
+}
+
+input:not([type='checkbox']){
+   @include input;
+}
+
+textarea{
+   @include input;
+
+   min-height: 100px;
+   max-height: 200px;
+   height: 100px;
+   resize: vertical;
+
+   @media #{$mobile} {
+      min-height: 160px;
+      max-height: 300px;
+      height: 160px;
+   }
+}
+
+select{
+   @include input;
+}
+
+label{
+   display: block;
+}
+
+.input-group{
+   display: flex;
+   flex: 0 0 290px;
+   margin: 20px 0;
+   position: relative;
+
+   @media #{$mMobile} {
+      flex: 0 0 auto;
+   }
+   @media #{$sTablet} {
+      flex: 0 0 400px;
+   }
+
+   &.input-group-column{
+      flex-direction: column;
+
+      label{
+         padding-right: 0;
+         padding-bottom: 0;
+         width: 100%;
+         text-align: left;
+
+         &::after{
+            content: none;
+         }
+      }
+   }
+
+   label{
+      @include input;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;  
+      flex: 0 0 auto;
+      width: auto;
+      padding-right: 15px !important;
+      position: relative;
+      text-align: right;
+      font-size: 1.2rem;
+
+      @media #{$mobile} {
+         padding-right: 20px !important;
+         font-size: 1.8rem;
+      } 
+
+      &::after{
+         content: '';
+         position: absolute;
+         top: 50%;
+         right: 0;
+         transform: translateY(-50%);
+         background-color: rgba(#fff, .2);
+         width: 1px;
+         height: 60%;
+         max-height: 42px;
+      }
+
+      span{
+         display: block;
+         text-align: left;
+         font-size: 1rem;
+
+         @media #{$mobile} {
+            font-size: 1.5rem;
+         } 
+      }
+   }
+
+   input, .wpcf7-form-control-wrap{
+      display: flex;
+      flex: 1 1 auto;
+      text-align: right;
+   }
+}
+
+.form{
+   margin: 30px 0;
+
+   @media #{$mobile} {
+      margin: 30px 0;
+   }  
+
+   &__group{
+      padding: 10px 0;
+      position: relative;
+      
+      @media #{$mobile} {
+         padding: 15px 0;
+      }      
+   }
+
+   &__label{
+      display: block;
+      font-size: 2rem;
+      font-weight: 100;
+      margin-bottom: 5px;
+   }
+
+   &__btn-group{
+      text-align: right;
+
+      .btn{
+         margin: 0;
+      }
+   }
+}
+
+
+.wpcf7-form-control-wrap{
+   position: static;
+}
+
+div.wpcf7-validation-errors,
+div.wpcf7-mail-sent-ng,
+div.wpcf7-response-output {
+   border: none;
+   padding: 20px 15px;
+   background: #FE2139;
+   color: #fff;
+   margin-left: 0;
+   margin-right: 0;
+   
+
+   @media #{$mobile} {
+      padding: 30px 15px;
+   }
+}
+
+span.wpcf7-not-valid-tip {
+   position: absolute;
+   top: 0;
+   right: 0;
+   font-size: 1.2rem;
+   color: #fff;
+   line-height: 1.2;
+   background: #FE2139;
+   padding: 3px 5px;
+   font-weight: 500;
+   animation: .3s appear-reverse;
+
+   @media #{$mobile} {
+      margin-left: 30px;
+   }
+   @media #{$sDesktop} {
+      margin-left: 35px;
+   }
+
+   &.hide{
+      animation: .3s appear-hide;
+      opacity: 0;
+   }
+}
+
+.checkbox-wrapper{
+   margin: 30px 0;
+}
+
+.checkbox-field{
+   margin: 5px 0;
+
+   &.is-open{
+
+      .wpcf7-list-item-label{
+         max-height: 100%;
+         overflow: inherit;
+      }
+
+      .more-text-toggle{
+         display: none;
+      }
+   }
+
+   .wpcf7-list-item-label{
+      max-height: 49px;
+      min-height: 26px;
+      overflow: hidden;
+      text-align: left;
+   }
+
+   .wpcf7-list-item{
+      margin-left: 0;
+   }
+
+   .more-text-toggle{
+      display: block;
+      text-align: right;
+      width: 100%;
+      font-size: 1.2rem;
+      color: map-get($map: $colors, $key: secondary);
+      padding: 5px 10px;
+      cursor: pointer;
+   }
+}
+
+input[type='checkbox'] {
+   display: none;
+
+   & + span {
+      display: block;
+      position: relative;
+      cursor: pointer;
+      padding-left: 45px;
+      font-size: 1.1rem;
+      line-height: 1.4;
+      font-style: italic;
+      color: rgba(#fff, .7);
+
+      @media #{$mobile} {
+         font-size: 1.2rem;
+      }
+      &::before {
+         content: '';
+         width: 24px;
+         height: 24px;
+         border: 1px solid rgba(255, 255, 255, .2);
+         background-color: rgba(#f0f0f0, .07);
+         transition: .2s;
+         display: inline-flex;
+         justify-content: center;
+         align-items: center;
+         position: absolute;
+         top: 0;
+         left: 0;
+         @media #{$tablet} {
+            background-color: rgba(#f0f0f0, .07);
+         }
+      }
+      &:active::before {
+         transform: scale(0.8);
+      }
+   }
+   &:checked + span::before {
+      content: '\2714';
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: map-get($map: $colors, $key: secondary);
+   }
+}

@@ -1,0 +1,54 @@
+// @mixin padding-top($type: padding) {
+   
+//    @if $type == padding {
+//       padding-top: map-get($map: $padding-top, $key: xs);
+//    } @else {
+//       margin-top: map-get($map: $padding-top, $key: xs);
+//    }
+//    @each $breakpoint, $padding in $padding-top {
+//       $breakpoints-math: map-get($map: $breakpoints, $key: $breakpoint);
+//       @if $breakpoints-math != 0 {
+//          @media (min-width: $breakpoints-math) {
+//             @if $type == padding {
+//                padding-top: $padding;
+//             } @else {
+//                margin-top: $padding;
+//             }
+//          }
+//       }
+//    }
+// }
+
+// @mixin padding-bottom {
+//    padding-bottom: map-get($map: $padding-bottom, $key: xs);
+//    @each $breakpoint, $padding in $padding-bottom {
+//       $breakpoints-math: map-get($map: $breakpoints, $key: $breakpoint);
+//       @if $breakpoints-math != 0 {
+//          @media (min-width: $breakpoints-math) {
+//             padding-bottom: $padding;
+//          }
+//       }
+//    }
+// }
+
+@mixin arrow($size, $border, $color, $rotate: 0, $translate: 0) {
+   content: '';
+   position: absolute;
+   width: $size;
+   height: $size;
+   border-top: $border solid $color;
+   border-left: $border solid $color;
+
+   @if $translate == 1 {
+      transform: translate(-50%, -50%) rotate($rotate);
+   } @else {
+      transform: rotate($rotate);
+   }
+}
+
+@mixin absolute-center{
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}

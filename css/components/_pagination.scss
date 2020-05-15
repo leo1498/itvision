@@ -1,0 +1,61 @@
+.pagination{
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+   margin: 40px auto;
+   padding: 0 15px;
+
+   @media #{$mMobile} {
+      padding: 0;
+      justify-content: center;
+   }
+   @media #{$mobile} {
+      margin: 50px auto;
+      justify-content: center;
+   }
+   @media #{$tablet} {
+      margin: 70px auto;
+   }
+   @media #{$desktop} {
+      margin: 100px auto;
+   }
+
+   .next{
+      position: relative;
+
+      &::after{
+         right: -20px;
+         @include arrow(20px, 1px, #fff, 135deg, 1);
+      }
+   }
+
+   .prev{
+      position: relative;
+
+      &::after{
+         left: 0;
+         @include arrow(20px, 1px, #fff, -45deg, 1);
+      }
+   }
+
+   a{
+      padding: 10px;
+      font-size: 1.6rem;
+      color: #fff;
+
+      @media #{$mobile} {
+         font-size: 2rem;
+      }
+   }
+
+   .current{
+      padding: 10px;
+      font-weight: 700;
+      font-size: 1.8rem;
+      color: #fff;
+
+      @media #{$mobile} {
+         font-size: 3rem;
+      }
+   }
+}

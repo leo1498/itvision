@@ -1,0 +1,316 @@
+@mixin accordion-arrow{
+   right: 0;
+   @include arrow(20px, 1px, map-get($colors, dark), 225deg, 1);
+
+   @media #{$mobile} {
+      right: 20px;
+      width: 31px;
+      height: 31px;
+   }
+}
+
+.accordion{
+   color: map-get($colors, dark);
+   line-height: 1.5;
+
+   @media #{$mobile} {
+      font-size: 1.5rem;
+   }
+
+   &--simple{
+      margin: 50px 0;
+
+      @media #{$mobile} { 
+         margin: 70px 0;
+      }
+
+      .h4{
+         margin-bottom: 30px;
+
+         @media #{$mobile} { 
+            margin-bottom: 50px;
+         }
+      }
+
+      .accordion__item{
+         border-top: 2px solid #EFEFEF;
+
+         @media #{$sDesktop} { 
+            padding: 6px 0 8px;
+         }
+
+         &.is-active{
+
+            .accordion__tab{
+
+               &::after{
+                  transform: translate(-50%, -50%) rotate(45deg);
+                  transform-origin: left;
+                  animation: .5s fadeIn;
+               }
+            }
+         }
+      
+         &:last-child{
+            border-bottom: 2px solid #EFEFEF;
+         }
+      }
+
+      .accordion__tab{
+         width: 100%;
+         position: relative;
+         padding-right: 40px;
+
+         @media #{$tablet} {
+            padding-right: 80px;
+         }
+
+         &::after{
+            @include accordion-arrow();
+            top: 25px;
+
+            @media #{$mobile} {
+               top: 35px;
+            }
+         }
+
+         .title{
+            margin-top: 0;
+            padding-top: 20px;
+
+            @media #{$mobile} {
+               padding-top: 30px;
+            }
+
+            &::before{
+               top: 24px;
+
+               @media #{$mobile} {
+                  top: 31px;
+               }
+            }
+         }
+      }
+   }
+
+   &--lg{
+      &.accordion{
+
+         .title{
+            text-transform: uppercase;
+            padding-left: 20px;
+   
+            @media #{$mobile} {
+               padding-left: 50px;
+               font-size: 3rem;
+            }
+            @media #{$sDesktop} {
+               font-size: 3.6rem;
+            }
+            @media #{$desktop} {
+               padding-left: 0;
+            }
+
+            &::before{
+               top: 5px;
+               left: 0;
+   
+               @media #{$sDesktop} {
+                  top: 8px;
+                  transform: translateX(-100%);
+               }
+               @media #{$desktop} {
+                  left: -45px;
+               }
+            }
+         }
+      }
+   }
+
+   &--no-margin{
+      margin: 0;
+
+      .accordion__item{
+         &:first-child{
+            border-top: none;
+         }
+         &:last-child{
+            border-bottom: none;
+         }
+      }
+   }
+
+   &--last-tab-open{
+
+      .accordion__item{
+
+         &:last-child{
+
+            .js-tab{
+               cursor: default;
+            }
+
+            .title{
+               font-weight: 300 !important;
+
+               &::before{
+                  background-color: map-get($map: $colors, $key: primary) !important;
+                  animation: none !important;
+               }
+            }
+
+            .accordion__tab{
+               
+               &::after{
+                  content: none;
+               }
+               
+               &-content{
+                  animation: none !important;
+               }
+            }
+            
+            .accordion__tab-content{
+               display: block !important;
+            }
+         }
+      }
+   }
+
+   .h4{
+      text-transform: uppercase;
+   }
+
+   p{
+      font-size: 1.3rem !important;
+
+      @media #{$mobile} {
+         font-size: 1.5rem !important;
+      }
+   }   
+
+   &__item{
+      cursor: pointer;
+
+      &.is-active{
+         cursor: default;
+
+         .accordion__tab-content{
+            display: block;
+            animation: .5s appear;
+         }
+
+         .title{
+            font-weight: 500;
+
+            &::before{
+               background-color: map-get($map: $colors, $key: secondary-dark);
+               animation: .5s fadeIn;
+            }
+         }
+      }
+
+      .js-tab{
+         cursor: pointer;
+      }
+
+      .title{
+         font-weight: 100;
+         color: map-get($colors, dark);
+         position: relative;
+         padding-left: 20px;
+         margin-bottom: 0;
+         font-size: 1.6rem;
+
+         @media #{$mobile} {
+            padding-left: 50px;
+            font-size: 2.3rem;
+         }
+         @media #{$sDesktop} {
+            font-size: 2.5rem;
+         }
+
+         &::before{
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: 0;
+            width: 10px;
+            height: 10px;
+            background-color: map-get($map: $colors, $key: primary);
+
+            @media #{$mobile} {
+               width: 26px;
+               height: 26px;
+               top: 1px;
+            }
+         }
+      }
+   }
+
+   &__tab-content{
+      display: none;
+   }
+
+   // sub tabs
+   &__subitem{
+      border-top: 2px solid #EFEFEF;
+      cursor: pointer;
+
+      &.is-active{
+         animation: .2s appear;
+
+         .accordion__subtab-content{
+            display: block;
+            animation: .5s appear;
+         }
+
+         .accordion__subtab{
+
+            &::after{
+               transform: translate(-50%, -50%) rotate(45deg);
+               transform-origin: inherit;
+               animation: .5s fadeIn;
+            }
+         }
+      }
+
+      &:last-child{
+         border-bottom: 2px solid #EFEFEF;
+      }
+   }
+
+   &__subtab{
+      width: 100%;
+      padding: 20px 50px 20px 15px;
+      text-transform: uppercase;
+      font-weight: 100;
+      position: relative;
+
+      @media #{$mobile} {
+         padding: 40px 80px 30px 25px;
+      }
+      @media #{$sDesktop} {
+         font-size: 2.5rem;
+      }
+
+      &::after{
+         @include accordion-arrow();
+
+         top: 40%;
+
+         @media #{$mobile} {
+            top: 42%;
+         }
+      }
+   }
+
+   &__subtab-content{
+      display: none;
+      padding: 0 15px 20px;
+
+      @media #{$mobile} {
+         padding: 0 25px 40px;
+      }
+   }
+}

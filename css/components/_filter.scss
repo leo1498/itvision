@@ -1,0 +1,94 @@
+.filter{
+   margin: 30px 0;
+
+   &__wrapper{
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-right: -15px;
+   }
+
+   &__field{
+      position: relative;
+      margin: 7.5px 0;
+   }
+
+   .filter-search{
+      margin-right: 15px;
+      flex: 1;
+      min-width: 250px;
+
+      @media #{$tablet} {
+         margin-right: 30px;
+      }
+
+      &--input{
+         padding-right: 40px;
+
+         @media #{$mobile} {
+            padding-right: 100px;
+            font-size: 1.8rem;
+         }
+         @media #{$sDesktop} {
+            font-size: 2rem;
+         }
+      }
+
+      &--btn{
+         position: absolute;
+         top: 0;
+         right: 0;
+         background: none;
+         outline: none;
+         border: none;
+         height: 100%;
+         padding: 0 20px;
+         cursor: pointer;
+
+         @media #{$mobile} {
+            right: 10px;
+         }
+
+         img{
+            width: 20px;
+
+            @media #{$mobile} {
+               width: auto;
+            }
+         }
+      }
+   }
+
+   .filter-sort{
+      position: relative;
+      margin-right: 15px;
+
+      &::after{
+         top: 44%;
+         right: 15px;
+         @include arrow(18px, 1px, #fff, 225deg, 1);
+         z-index: -1;
+      }
+   }
+
+   &__select{
+      background: rgba(#fff, 0.07);
+      border: 0;
+      outline: none;
+      text-align-last: right;
+      text-align: right;
+      padding-right: 70px;
+      padding-left: 20px;
+   }
+
+   &__option{
+      background: #12181A;
+      padding: 10px 0;
+   }
+
+   &__error{
+      color: rgba(#fff, .5);
+      font-weight: 100;
+   }
+}

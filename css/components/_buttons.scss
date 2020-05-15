@@ -1,0 +1,140 @@
+.btn{
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   padding: 1.5rem 3rem;
+   margin: 1rem 0;
+   overflow: hidden;
+   user-select: none;
+   border: none;
+   border-radius: 3px;
+   outline-color: transparent;
+   color: #fff;
+   
+   text-align: center;
+   font-family: $fontComfortaa;
+   font-weight: 700;
+   font-size: 1.2rem;
+   letter-spacing: 0.5px;
+   text-transform: uppercase;
+   cursor: pointer;
+   transition: background-color .15s linear, border .15s linear, color .15s linear;
+
+   @media #{$mobile} {
+      font-size: 1.5rem;
+   }
+   @media #{$tablet} {
+      margin: 2rem 0;
+   }
+
+   &--xs{
+      font-size: 1rem;
+   }
+   &--md{
+      font-size: 1.2rem;
+      font-weight: 100;
+
+      @media #{$sTablet} {
+         font-size: 1.5rem;
+      }
+   }
+   &--lg{
+      padding: 2rem 3rem;
+
+      @media #{$sDesktop} {
+         font-size: 2rem;
+         line-height: 2;
+      }
+   }
+
+   &--primary{
+      background-color: map-get($colors, primary);
+      border: 1px solid map-get($colors, primary);
+
+      &:hover{
+         background-color: map-get($colors, secondary);
+         border: 1px solid map-get($colors, secondary);
+      }
+   }
+
+   &--primary-dark{
+      background-color: map-get($colors, primary-dark);
+      border: 1px solid map-get($colors, primary-dark);
+
+      &:hover{
+         background-color: map-get($colors, secondary);
+         border: 1px solid map-get($colors, secondary);
+      }
+   }
+
+   &--secondary{
+      background-color: map-get($colors, secondary);
+      border: 1px solid map-get($colors, secondary);
+
+      &:hover{
+         background-color: map-get($colors, primary);
+         border: 1px solid map-get($colors, primary);
+      }
+   }
+
+   &--white{
+      background-color: #fff;
+      border: 1px solid #fff;
+
+      &:hover{
+         background-color: map-get($colors, primary);
+         border: 1px solid map-get($colors, primary);
+         color: map-get($colors, primary);
+      }
+   }
+
+   &--outline{
+      background-color: transparent;
+
+      &:hover{
+         background-color: map-get($colors, secondary);
+         border-color: map-get($colors, secondary);
+      }
+   }
+
+   &--no-bg{
+      background-color: transparent;
+      padding-left: 0;
+   }
+
+   &--arrow{
+      position: relative;
+
+      &::after{
+         content: '';
+         position: absolute;
+         top: 47%;
+         right: 0;
+         @include arrow(12px, 1px, #fff, 135deg, 1);
+      }
+   }
+}
+
+.link-btn{
+   display: block;
+   margin-top: 30px;
+   color: map-get($colors, primary);
+}
+
+.wp-block-button__link{
+   font-weight: 700;
+
+   @media #{$mobile} {
+      padding-left: 40px;
+      padding-right: 40px;
+      margin: 30px 0;
+   }
+
+   &:hover{
+      color: inherit !important;
+   }
+
+   &.has-background{
+      color: #fff !important;
+   }
+}

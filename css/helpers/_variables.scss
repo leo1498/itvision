@@ -1,0 +1,37 @@
+$lDesktop: "only screen and (min-width: 1850px)";
+$desktop: "only screen and (min-width: 1599px)";
+$sDesktop: "only screen and (min-width: 1365px)";
+$tablet: "only screen and (min-width: 1279px)";
+$sTablet: "only screen and (min-width: 1023px)";
+$mobile: "only screen and (min-width: 767px)";
+$mMobile: "only screen and (min-width: 479px)";
+$sMobile: "only screen and (min-width: 371px)";
+$mobileOnly: "only screen and (max-width: 767px)";
+
+$colors: (
+   primary: #e9a927,
+   primary-dark: #D87108,
+   secondary: #0a9fb5,
+   secondary-dark: #016481,
+   dark: #191919
+);
+
+$fontComfortaa: 'Comfortaa', sans-serif; // or cursive;
+
+$breakpoints: (
+   xs: 0,
+   md: 767,
+   lg: 1279
+);
+
+$padding-top: (
+   xs : 60px,
+   md : 200px,
+   lg : 250px
+);
+
+$padding-bottom: (
+   xs : 40px,
+   md : 100px,
+   lg : 160px
+);

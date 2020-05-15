@@ -1,0 +1,108 @@
+.section-counter{
+   padding: 100px 0 0;
+
+   @media #{$mobile} {
+      background-image: url(../img/lines/home_05_circle.png);
+      background-repeat: no-repeat;
+      background-size: 95%;
+      background-position: 200% -50px; 
+      padding: 150px 0 50px;
+   }
+   @media #{$sTablet} {
+      background-size: 85%;
+      background-position: 200% -100px; 
+   }
+   @media #{$desktop} {
+      padding: 200px 0;
+   }
+
+   &__wrapper{
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-around;
+      flex-wrap: wrap;
+
+      @media #{$mobile} {
+         flex-wrap: nowrap;
+      }
+   }
+}
+
+.counter{
+   margin-left: 20px;
+   margin-bottom: 80px;
+   padding: 0 15px;
+   width: 125px;
+   color: map-get($map: $colors, $key: primary);
+   font-weight: 700;
+   position: relative;
+   z-index: 1;
+
+   @media #{$mobile} {
+      margin-left: 45px;
+      width: 33.33%;
+   }
+   @media #{$tablet} {
+      margin-left: 81px;
+   }
+
+   &::before{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 7px solid;
+      border-color: transparent transparent transparent map-get($map: $colors, $key: primary);
+      transform: translate(-15px, -30px) rotate(45deg);
+      background-color: map-get($map: $colors, $key: secondary-dark);
+      z-index: -1;
+
+      @media #{$mobile} {
+         width: 100px;
+         height: 100px;
+         transform: translate(-25px, -30px) rotate(45deg);
+      }
+      @media #{$tablet} {
+         width: 162px;
+         height: 162px;
+         border-width: 10px;
+         transform: translate(-65px, -50px) rotate(45deg);
+      }
+   }
+
+   &--number{
+      width: 95px;
+      font-size: 6rem;
+      line-height: 1;
+
+      @media #{$mobile} {
+         font-size: 6rem;
+      }
+      @media #{$tablet} {
+         width: 128px;
+         font-size: 11rem;
+      }
+
+      i{
+         font-style: normal;
+      }
+   }
+
+   &--title{
+      font-size: 1.4rem;
+
+      @media #{$mobile} {
+         font-size: 1.8rem;
+      }
+      @media #{$sTablet} {
+         font-size: 2.2rem;
+      }
+      @media #{$sDesktop} {
+         font-size: 2.4rem;
+      }
+   }
+}

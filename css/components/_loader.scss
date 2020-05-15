@@ -1,0 +1,42 @@
+.is-loading{
+   overflow: hidden;
+   
+   & > * {
+      visibility: hidden;
+      height: 0;
+   }
+
+   &::before{
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 2;
+
+      display: block;
+      width: 64px;
+      height: 64px;
+      margin: -32px 0 0 -32px;
+      border-radius: 50%;
+      border: 1px solid map-get($map: $colors, $key: primary);
+      border-color: map-get($map: $colors, $key: primary) map-get($map: $colors, $key: primary) transparent transparent;
+      animation: lds-dual-ring 1.2s linear infinite;
+   }
+   
+   &::after{
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 2;
+
+      display: block;
+      width: 40px;
+      height: 40px;
+      margin: -20px 0 0 -20px;
+      border-radius: 50%;
+      border: 1px solid map-get($map: $colors, $key: primary);
+      border-color: transparent map-get($map: $colors, $key: primary) transparent transparent;
+      animation: lds-dual-ring 2s linear infinite;
+   }
+}

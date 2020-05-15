@@ -1,0 +1,1 @@
+<?php include locate_template('templates/page-product-single.php'); ?>

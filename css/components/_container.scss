@@ -1,0 +1,143 @@
+.container {
+   padding-left: 15px;
+   padding-right: 15px;
+   width: 100%;
+
+   @media #{$mobile} {
+      padding-left: 30px;
+      padding-right: 30px; 
+   }
+
+   @media #{$sDesktop} {
+      max-width: 100%;
+      padding-left: 6rem;
+      padding-right: 6rem;
+   }
+
+   @media #{$desktop} {
+      max-width: 1410px;
+      margin: 0 auto;
+      padding: 0;
+   }
+
+   &--xs{
+      @media #{$tablet} {
+         max-width: 1108px;
+         margin: 0 auto;
+         padding: 0;
+      }
+   }
+
+   &--lg{
+      @media #{$desktop} {
+         max-width: 1470px;
+      }
+   }
+}
+
+.container-right{
+
+   @media #{$mobile} {
+      padding-right: 30px; 
+   }
+
+   @media #{$sDesktop} {
+      padding-right: 6rem;
+   }
+}
+
+
+// padding
+.noMarginTop {
+   margin-top: 0;
+}
+
+.noMarginBottom {
+   margin-bottom: 0;
+}
+
+.normalMarginTop {
+   margin-top: 40px;
+
+   @media #{$tablet} {
+      margin-top: 90px;
+   }
+   @media #{$desktop} {
+      margin-top: 140px;
+   }
+}
+
+.normalMarginBottom {
+   margin-bottom: 40px;
+
+   @media #{$tablet} {
+      margin-bottom: 90px;
+   }
+   @media #{$desktop} {
+      margin-bottom: 140px;
+   }
+}
+
+.noPaddingnTop {
+   padding-top: 0 !important;
+}
+
+.noPaddingBottom {
+   padding-bottom: 0 !important;
+}
+
+.smallPaddingTop {
+   padding-top: 20px;
+
+   @media #{$tablet} {
+      padding-top: 40px;
+   }
+}
+
+.smallPaddingBottom {
+   padding-bottom: 20px;
+
+   @media #{$tablet} {
+      padding-bottom: 40px;
+   }
+}
+
+.mediumPaddingTop {
+   padding-top: 30px;
+
+   @media #{$tablet} {
+      padding-top: 60px;
+   }
+}
+
+.mediumPaddingBottom {
+   padding-bottom: 30px;
+
+   @media #{$tablet} {
+      padding-bottom: 60px;
+   }
+}
+
+.normalPaddingTop {
+   padding-top: 40px;
+
+   @media #{$tablet} {
+      padding-top: 90px;
+   }
+}
+
+.normalPaddingBottom {
+   padding-bottom: 40px;
+
+   @media #{$tablet} {
+      padding-bottom: 90px;
+   }
+}
+
+.largePaddingBottom {
+   padding-bottom: 70px;
+
+   @media #{$tablet} {
+      padding-bottom: 140px;
+   }
+}

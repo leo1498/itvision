@@ -1,0 +1,55 @@
+
+.header{
+   position: absolute;
+   left: 0; 
+   top: 0;
+   width: 100%; 
+   display: flex;
+   background-color: rgba(0,0,0, .29);
+   border-bottom: 1px dashed rgba(0,0,0, .1);
+   z-index: 99;
+   // transition: transform .3s ease-in-out;
+
+   &.is-scrolled{
+      position: fixed;
+      transform: translateY(0);
+      background: rgba(0,0,0, .9);  
+      animation: .3s appear-reverse;
+   }
+
+   &__wrapper{ 
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+   }
+
+}
+
+.logo{
+   padding: 10px 0;
+   z-index: 9;
+
+   @media #{$tablet} {
+      padding: 15px 0;
+   }
+
+   svg{
+      width: 150px; 
+      height: auto;
+
+      @media #{$mobile} {
+         width: 180px;
+      }
+      @media #{$sDesktop} {
+         width: 205px;
+      }
+      @media #{$desktop} {
+         width: 222px;
+      }
+
+      path{
+         fill: #fff !important;  
+      }
+   }
+}

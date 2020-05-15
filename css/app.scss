@@ -1,0 +1,78 @@
+/*! leo.suhomud@gmail.com */
+
+/**
+* Import helpers
+*/
+@import "helpers/variables";
+@import "helpers/mixins";
+@import "helpers/animations";
+@import "helpers/sprites";
+
+/**
+* Import components
+*/
+@import "components/menu-nav";
+@import "components/hamburger";
+
+@import "components/buttons";
+@import "components/ui-icons";
+@import "components/container";
+@import "components/title";
+@import "components/video";
+@import "components/loader";
+@import "components/slick";
+@import "components/form";
+@import "components/filter";
+
+@import "components/component-main-planet";
+@import "components/component-our-products";
+@import "components/component-our-solution";
+@import "components/component-etaps";
+@import "components/component-counter";
+@import "components/component-our-experts";
+@import "components/component-about-logo"; 
+@import "components/component-contact";
+
+
+@import "components/slider-partners";
+@import "components/news";
+@import "components/content";
+@import "components/pagination";
+@import "components/accordion";
+@import "components/breadcrumbs";
+@import "components/tags";
+@import "components/newsletter";
+@import "components/gallery";
+@import "components/product-item";
+
+@import "components/box-tiles";
+@import "components/icon-tiles";
+@import "components/client-tiles";
+@import "components/service-tiles";
+@import "components/recent-post";
+@import "components/search";
+@import "components/recaptcha";
+
+
+/** 
+* Import layout
+*/
+@import "layout/base";
+@import "layout/header";
+@import "layout/main";
+@import "layout/footer";
+
+
+/**
+* Import templates
+*/
+@import "templates/single-posts";
+@import "templates/single-services";
+@import "templates/single-client";
+
+
+/**
+* Import vendors
+*/
+@import "vendor/slick";
+@import '~@fancyapps/fancybox/dist/jquery.fancybox.min.css';

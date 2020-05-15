@@ -1,0 +1,145 @@
+.our-products{
+   padding: 60px 0 40px;
+   position: relative;
+
+   @media #{$mobile} {
+      padding: 80px 0 50px;
+   }
+   @media #{$sTablet} {
+      padding: 120px 0 100px;
+   }
+   @media #{$desktop} {
+      padding: 250px 0 160px;
+   }
+
+   &::before{
+      content: '';
+      position: absolute;
+      top: -58vh;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: url(../img/lines/home_03_line.png) no-repeat;
+      background-position: 35% 100%;
+      z-index: 2;
+   }
+
+   &__wrapper{
+      position: relative;
+      z-index: 2;
+
+      .arrow{
+         display: none;
+
+         @media #{$mobile} {
+            display: block;
+         }
+      }
+   }
+}
+
+.products-slider{
+   margin: 40px -15px 0;
+
+   display: flex;
+   align-items: flex-start;
+   justify-content: flex-start;
+
+   overflow-x: auto;
+   scroll-snap-type: mandatory;
+   scroll-snap-points-x: repeat(124px);
+   -webkit-overflow-scrolling: touch;
+
+   @media #{$mobile} {
+      margin: 50px 0 0;
+      display: block;
+      overflow-x: inherit;
+   }
+   @media #{$sDesktop} {
+      max-width: 1100px;
+      margin: 50px auto 0;
+   }
+   @media #{$desktop} {
+      margin: 140px auto 0;
+   }
+
+   &__item{
+      display: flex !important;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 30px;
+      position: relative;
+      border-radius: 50%;
+      flex: 0 0 124px;
+      scroll-snap-align: start;
+      outline: none;
+      transition: background-image .15s ease-in-out;
+
+      @media #{$mobile} {
+         flex: auto;
+         padding: 40px 15px;
+      }
+
+      &:hover{
+         background-image: url(../img/shadow.png);
+         background-repeat: no-repeat;
+         background-size: cover;
+         background-position: 50%;
+         
+         h3{
+            color: map-get($map: $colors, $key: primary);
+         }
+      }
+
+      &:first-child{
+         padding-left: 15px;
+      }
+
+      &:not(:first-child)::before{
+         content: '';
+         position: absolute;
+         top: 73px;
+         left: 0;
+         width: 1px;
+         height: 73px;
+         background-color: map-get($map: $colors, $key: secondary);
+
+         @media #{$mobile} {
+            content: none;
+         }
+      }
+
+      img{
+         max-width: initial;
+      }
+
+      h3{
+         margin-top: 15px;
+         text-transform: uppercase;
+         font-size: 1.6rem;
+         transition: color .15s ease-in-out;
+
+         @media #{$mobile} {
+            margin-top: 30px;
+            font-size: 1.8rem;
+         }
+         @media #{$tablet} {
+            font-size: 2.2rem;
+         }
+      }
+   }
+
+   .slick-current ~ .slick-slide .products-slider__item{
+      &::before{
+         content: '';
+         position: absolute;
+         top: 73px;
+         left: 0;
+         width: 1px;
+         height: 73px;
+         background-color: map-get($map: $colors, $key: secondary);
+      }
+   }
+}

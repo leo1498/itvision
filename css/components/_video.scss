@@ -1,0 +1,67 @@
+.video{
+   position: relative;
+
+   &__responsive{
+      position: relative;
+      display: block;
+      height: 0;
+      padding: 0;
+
+      @media #{$mobile} {
+         padding-bottom: 56.25%;
+      }
+
+      iframe, video{
+         position: absolute;
+         top: 0;
+         bottom: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         border: 0;
+         outline: none;
+      }
+   }
+}
+
+
+.video-btn{
+   @include absolute-center;
+   width: 94px;
+   height: 94px;
+   border: 11px solid #fff;
+   background-color: rgba(map-get($map: $colors, $key: secondary), .5);
+   border-radius: 50%;
+   z-index: 1;
+   transform-origin: center;
+   transition: background-color .15s ease-in-out, transform .15s ease-in-out;
+
+   &::before{
+      content: '';
+      @include absolute-center;
+      margin-left: 3px;
+      width: 16px;
+      height: 21px;
+      border-left: 15px solid #fff;
+      border-bottom: 11px solid transparent;
+      border-top: 11px solid transparent;
+      transition: border-left .15s ease-in-out;
+   }
+
+   &:hover{
+      background-color: #fff;
+      transform: translate(-50%, -50%) scale(1.2);
+
+      &::before{
+         border-left: 15px solid map-get($map: $colors, $key: secondary);
+      }
+   }
+}
+
+.video-single{
+   padding: 50px 0 0;
+
+   @media #{$mobile} {
+      padding: 70px 0 0;
+   }
+}

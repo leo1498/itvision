@@ -1,0 +1,522 @@
+.systemSingle__content{
+   background-color: #012B37;
+   padding: 50px 0 10px;
+   font-weight: 100;
+   line-height: 1.7;
+   font-size: 1.4rem;
+   color: #fff;
+
+   @media #{$mobile} {
+      padding: 50px 0 20px;
+      font-size: 1.6rem;
+   }
+   @media #{$sDesktop} {
+      padding: 50px 0;
+   }
+   @media #{$desktop} {
+      font-size: 2.4rem;
+      line-height: 2;
+   }
+
+   p, li{
+      font-weight: 100;
+      line-height: 1.7;
+      font-size: 1.4rem;
+      color: #fff;
+
+      @media #{$mobile} {
+         font-size: 1.6rem;
+      }
+      @media #{$desktop} {
+         font-size: 2.4rem;
+         line-height: 2;
+      }
+   }
+
+   li{
+      &::before{
+         @media #{$mobile} {
+            top: 15px !important;
+         }
+      }
+   }
+
+   h1, h2, h3{
+      color: #fff;
+   }
+}
+
+
+.single-post__nav{
+   display: flex;
+   justify-content: space-around;
+
+   &.nav-flex-wrap{
+      flex-wrap: wrap;
+
+      @media #{$mMobile} {
+         flex-wrap: nowrap;
+      }
+
+      .btn{
+         width: 100%;
+   
+         @media #{$mMobile} {
+            width: calc(50% - 3px);
+         }
+      }
+   }
+
+   .btn{
+      width: calc(50% - 3px);
+      letter-spacing: 0;
+
+      @media #{$mobile} {
+         width: calc(50% - 9px);
+         letter-spacing: 0.5px;
+      }
+   }
+}
+
+.date-publication{
+   padding-top: 15px;
+   padding-bottom: 15px;
+   font-size: 1.2rem;
+   font-weight: 700;
+
+   @media #{$mobile} {
+      padding-top: 0;
+      font-size: 1.5rem;
+   }
+}
+
+.systemSingle{
+
+   @media #{$mobile} {
+      line-height: 2;
+   }
+
+   .h1{
+      position: relative;
+      padding-left: 50px;
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+
+      @media #{$sDesktop} {
+         padding-left: 100px;
+      }
+      @media #{$desktop} {
+         padding-left: 0;
+      }
+   }
+
+   p, li{
+      
+      @media #{$mobile} {
+         line-height: 2;
+      }
+   }
+
+   .wp-block-media-text.has-media-on-the-right{
+
+      @media #{$sTablet} {
+         grid-template-columns: 1fr 50%;
+      }
+      @media #{$desktop} {
+         grid-template-columns: 1fr 28%;
+      }
+   }
+
+   .wp-block-media-text__media{
+      background-color: map-get($map: $colors, $key: primary);
+      padding: 30px 15px;
+      margin-top: 0 !important;
+      font-size: 1.4rem;
+      line-height: 1.5;
+      color: #fff;
+
+      @media #{$mobile} {
+         padding: 30px 20px;
+         font-size: 1.6rem;
+      }
+      @media #{$sDesktop} {
+         padding: 45px 60px;
+         font-size: 1.8rem;
+         line-height: 1.8;
+      }
+      @media #{$desktop} {
+         padding: 65px 90px;
+      }
+   }
+
+   .single-post-content{
+
+      @media #{$sDesktop} {
+         padding: 90px 0;
+      }
+   }
+
+   .paddingBottom{
+      @media #{$mobile} {
+         padding-bottom: 100px;
+      }
+   }
+
+   &__figure{
+      background-color: map-get($map: $colors, $key: secondary-dark);
+
+      @media #{$mobile} {
+         display: flex;
+         align-items: center;
+      }
+      @media #{$tablet} {
+         align-items: flex-end;
+         box-shadow: inset 0 60px 0 0 #012B37;
+         height: 480px;
+      }
+      @media #{$desktop} {
+         height: 575px;
+         box-shadow: inset 0 160px 0 0 #012B37;
+      }
+
+      &--noimage{
+         justify-content: center;
+         height: 100%;
+         box-shadow: none;
+         
+         .text{
+            padding: 50px 20px !important;
+            flex: inherit !important;
+
+            @media #{$tablet} {
+               padding: 100px 20px !important;
+            }
+         }
+      }
+
+      &--image{
+         position: relative;
+         width: 100%;
+         max-width: 900px;
+
+         @media #{$mobile} {
+            flex: 1;
+         }
+         
+         &::after{
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(1, 100, 129, 0.7);
+            z-index: 1;
+         }
+
+         img{
+            width: 100%;
+            display: block;
+         }
+      }
+      
+      .text{
+         padding: 30px 15px;
+         font-size: 1.4rem;
+         font-weight: 100;
+         line-height: 1.5;
+
+         @media #{$mobile} {
+            padding: 40px 50px;
+            font-size: 1.6rem;
+            flex: 0 0 50%;
+         }
+         @media #{$tablet} {
+            padding: 75px 75px 40px;
+            line-height: 2;
+         }
+         @media #{$sDesktop} {
+            font-size: 1.8rem;
+         }
+         @media #{$desktop} {
+            padding: 260px 75px 75px;
+         }
+      }
+   }
+
+
+   &__blockquote{
+      position: relative;
+      font-size: 1.4rem;
+      font-weight: 100;
+      line-height: 1.5;
+      text-align: center;
+      margin: 30px 0;
+      padding: 0 20px;
+
+      @media #{$mobile} {
+         margin: 70px 0;
+         font-size: 1.6rem;
+         padding: 0;
+      }
+      @media #{$tablet} {
+         font-size: 2rem;
+      }
+      @media #{$sDesktop} {
+         font-size: 3rem;
+         line-height: 1.8;
+      }
+      @media #{$desktop} { 
+         margin: 90px 0;
+         font-size: 4rem;
+      }
+
+      &::before,
+      &::after{
+         content: '\201E';
+         position: absolute;
+         color: #fff;
+         opacity: .15;
+         font-size: 10rem;
+         line-height: 0;
+
+         @media #{$mobile} {
+            font-size: 20rem;
+         }
+   
+      }
+
+      &::before{
+         top: -15px;
+         left: 0;
+
+         @media #{$mobile} {
+            top: -50px;
+            left: 0;
+         }
+         @media #{$desktop} {
+            top: -15px;
+            left: 25px;
+         }
+      }
+      &::after{
+         bottom: 30px;
+         right: 0;
+
+         @media #{$mobile} {
+            bottom: 70px;
+            right: 25px;
+         }
+      }
+   }
+
+   &__review{
+
+      &--box{
+         width: calc(100% - 20px);
+         transform: translateY(-20px);
+         background-color: map-get($map: $colors, $key: primary);
+         color: #fff;
+         font-weight: 100;
+         padding: 30px 20px;
+         
+         @media #{$mobile} {
+            padding: 30px;
+            width: 80%;
+            transform: translateY(-50px);
+         }
+         @media #{$sDesktop} {
+            transform: translateY(-100px);
+            width: 50%;
+            padding: 70px 70px 50px 6vw;
+         }
+         @media #{$desktop} {
+            font-size: 1.8rem;
+         }
+
+         .text{
+            margin-bottom: 15px;
+
+            @media #{$mobile} {
+               margin-bottom: 40px;
+            }
+         }
+
+         span{
+            display: block;
+            text-align: right;
+            font-size: 1.4rem;
+
+            @media #{$mobile} {
+               font-size: 1.8rem;
+            }
+            @media #{$desktop} {
+               font-size: 2.2rem;
+            }
+
+            &.span-strong{
+               font-weight: 700;
+               font-size: 1.6rem;
+               line-height: 1;
+
+               @media #{$mobile} {
+                  font-size: 2rem;
+               }
+               @media #{$desktop} {
+                  font-size: 2.8rem;
+               }
+            }
+         }
+      }
+   }
+
+   &__result{
+      position: relative;
+      overflow-x: hidden;
+
+      img{
+         display: block;
+         max-width: 100%;
+         max-height: 90vh;
+         width: auto;
+         margin: 40px auto;
+
+         @media #{$mobile} {
+            margin: 100px auto 70px;
+         }
+      }
+
+      .title{
+         font-size: 4rem;
+         text-transform: uppercase;
+         text-align: left;
+         margin-bottom: 20px;
+
+         @media #{$sDesktop} {
+            font-size: 5rem;
+         }
+      }
+
+      .subtitle{
+         font-weight: 100;
+         margin: 0;
+
+         @media #{$mobile} {
+            text-align: center;
+         }
+      }
+   }
+
+   &__btn{
+      flex-wrap: wrap;
+      margin: 50px 0 0;
+
+      @media #{$sDesktop} {
+         margin: 100px 50px 0;
+      }
+
+      .btn{
+         width: 100%;
+
+         @media #{$mobile} {
+            width: calc(50% - 10px);
+         }
+         @media #{$tablet} {
+            width: calc(50% - 25px);
+         }
+      }
+   }
+
+   .recent-posts__wrapper{
+      justify-content: space-between;
+      margin: 0;
+      overflow-x: hidden;
+
+      @media #{$mobile} {
+         justify-content: space-around;
+      }
+   }
+
+   .nav-post{
+      width: calc(50% - 5px);
+
+      @media #{$mobile} {
+         width: calc(50% - 10px);
+      }
+      @media #{$tablet} {
+         width: calc(50% - 25px);
+      }
+      
+
+      .news__article{
+
+         @media #{$mMobile} {
+            height: 150px;
+         }
+         @media #{$mobile} {
+            height: 200px;
+         }
+         @media #{$tablet} {
+            height: 300px;
+         }
+      }
+
+      .news__image{
+
+         @media #{$mMobile} {
+            flex: 0 0 100px;
+         }
+         @media #{$mobile} {
+            flex: 0 0 180px;
+         }
+         @media #{$sTablet} {
+            flex: 0 0 247px;
+         }
+      }
+
+      .news__content{
+         justify-content: center;
+      }
+
+      .news__text--title{
+         color: #fff;
+         text-transform: uppercase;
+         line-height: 1.3;
+         font-size: 1.6rem;
+         margin-bottom: 10px;
+
+         @media #{$tablet} {
+            font-size: 2rem;
+         }
+      }
+
+      .change-post{
+         display: block;
+         color: map-get($map: $colors, $key: primary);
+         text-transform: uppercase;
+         font-weight: 700;
+         margin-bottom: 20px;
+
+         @media #{$tablet} {
+            font-size: 2rem;
+            margin-bottom: 40px;
+         }
+         @media #{$desktop} {
+            font-size: 3rem;
+         }
+      }
+
+      p{
+         display: none;
+         
+         @media #{$mMobile} {
+            line-height: 1.3;
+         font-size: 1.4rem;
+         }
+         @media #{$tablet} {
+            line-height: 1.5;
+         }
+      }
+   }
+}

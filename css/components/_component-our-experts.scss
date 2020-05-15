@@ -1,0 +1,289 @@
+.our-experts{
+   padding: 50px 0 0;
+   position: relative;
+   z-index: 7;
+
+   @media #{$mobile} {
+      padding: 90px 0 0; 
+   }
+   @media #{$sTablet} {
+      padding: 150px 0 0;
+   }
+   @media #{$desktop} {
+      padding: 220px 0 0;
+   }
+
+   &.experts-page{
+      padding: 0;
+
+      .our-experts__wrapper{
+         background-color: transparent;
+      }
+
+      .experts-slider{
+         flex-wrap: wrap;
+         align-items: flex-start;
+
+         &__person{
+            flex: 0 0 100%;
+            margin-bottom: 30px;
+
+            @media #{$mMobile} {
+               flex: 0 0 33.33%;
+               margin-bottom: 70px
+            }
+            @media #{$mobile} {
+               margin-bottom: 70px;
+            }
+            
+            &--text{
+
+               &::after{
+                  content: none;
+               }
+            }
+         } 
+      }
+   }
+
+   &::before{
+      
+
+      @media #{$mobile} {
+         content: '';
+         position: absolute;
+         top: -56vh;
+         left: 0;
+         width: 100%;
+         height: 100vh;
+         background: url(../img/lines/home_03_line.png) no-repeat;
+         background-position: 35% 100%;
+         z-index: 2;
+      }
+   }
+
+   &__wrapper{
+      height: auto;
+      margin-top: 40px;
+      background-color: #011623;
+      padding: 20px 0 0;
+      color: #fff;
+      position: relative;
+      z-index: 2;
+      transition: height .3s ease-in-out;
+
+      @media #{$mobile} {
+         margin-top: 80px;
+         padding: 55px 0 0;
+      }
+      @media #{$sDesktop} {
+         margin-top: 120px;
+      }
+   }
+
+   &__box{
+      position: relative;
+   }
+
+   .arrow{
+      display: none;
+
+      @media #{$mobile} {
+         display: block;
+      }
+
+      &::after{
+         width: 29px;
+         height: 29px;
+      }
+
+      &.arrow--prev{
+         @media #{$mobile} {
+            transform: translate(-50%, -80%);
+         }
+         @media #{$desktop} {
+            transform: translate(-100%, -80%);
+         }
+      }
+
+      &.arrow--next{
+         @media #{$mobile} {
+            transform: translate(50%, -80%);
+         }
+         @media #{$desktop} {
+            transform: translate(100%, -80%);
+         }
+      }
+   }
+}
+
+.experts-slider{
+   display: flex;
+   align-items: center;
+   justify-content: flex-start;
+   padding: 30px 0;
+   margin: 0 -15px; 
+
+   overflow-x: auto;
+   scroll-snap-type: mandatory;
+   scroll-snap-points-x: 250px;
+   -webkit-overflow-scrolling: touch;
+
+   @media #{$mobile} {
+      overflow-x: inherit;
+      margin: 0;
+      padding: 0;
+      padding-bottom: 70px;
+   }
+
+   .slick-track{
+      padding-top: 10px !important;
+      display: flex !important;
+
+      .slick-slide {
+         display: flex !important; 
+         height: auto;
+      }
+   }
+
+   .slick-current ~ .slick-slide .experts-slider__person{
+      border-left: 1px solid rgba(#016481, .2);
+   }
+
+   &__person{
+      display: flex !important;
+      flex-direction: column; 
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+      padding: 0 15px;
+      margin-bottom: 30px;
+      text-align: center;
+
+      scroll-snap-align: start;
+      flex: 0 0 250px;
+
+      @media #{$mobile} {
+         padding: 0 30px;
+      }
+      @media #{$desktop} {
+         padding: 0 70px;
+      }
+
+      &.slide{
+         .personText{
+            transition: max-height .5s ease-in-out;
+         }
+      }
+
+      &--image{
+         background-repeat: no-repeat;
+         background-position: center top;
+         background-size: cover;
+         display: inline-block;
+         position: relative;
+         border-radius: 50%;
+         width: 130px;
+         height: 130px;
+
+         @media #{$mobile} {
+            width: 162px;
+            height: 162px;
+         }
+
+         &::before{
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: -8px;
+            display: block;
+            width: calc(100% + 9px);
+            height: calc(100% + 9px);
+            border-radius: 50%;
+            border: 10px solid;
+            border-color: transparent map-get($map: $colors, $key: primary) transparent map-get($map: $colors, $key: primary);
+            transform: rotate(45deg);
+         }
+      }
+
+      &--info{
+         padding: 15px 0;
+         position: relative;
+
+         @media #{$sDesktop} {
+            padding: 32px 0;
+         }
+
+         &::before{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            display: block;
+            width: 87px;
+            height: 1px;
+            background-color: map-get($map: $colors, $key: primary);
+         }
+
+         span{
+            display: block;
+            font-size: 1.6rem;
+            font-weight: 300;
+            line-height: 1.5;
+
+            @media #{$sDesktop} {
+               font-size: 2rem;
+            }
+
+            &:first-child{
+               font-weight: 700;
+            }
+         }
+      }
+
+      &--text{
+         margin: 20px 0 10px;
+         line-height: 1.7;
+         font-weight: 100;
+         font-size: 1.3rem;
+         max-height: 250px;
+         overflow: hidden;
+         position: relative;
+
+         @media #{$mobile} {
+            max-height: 200px;
+         }
+         @media #{$tablet} {
+            max-height: 100%;
+            margin: 40px 0 10px;
+            font-size: 1.8rem;
+         }
+         @media #{$desktop} {
+            font-size: 2.2rem;
+         }
+
+         &::after{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 20px;
+            width: 100%;
+            background: #011623;
+            background: linear-gradient(to top, #011623 0, rgba(#011623,0) 100%);
+            z-index: 1;
+         }
+      }
+
+      .btn{
+         margin-bottom: 0;
+         color: map-get($map: $colors, $key: primary);
+
+         .icon-plus{
+            border-color: map-get($map: $colors, $key: primary);
+         }
+      }
+   }
+}

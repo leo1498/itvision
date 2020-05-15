@@ -1,0 +1,100 @@
+.gallery{
+   margin: 50px 0;
+   padding-bottom: 70px;
+   position: relative;
+   z-index: 1;
+
+   .slick-track{
+      display: flex;
+      align-items: center;
+   }
+
+   &__wrapper{
+      
+      @media #{$mobile} {
+         padding: 0 50px;
+      }
+      @media #{$tablet} {
+         padding: 0;
+      }
+   }
+
+   .slide{
+      padding: 0 5px;
+
+      @media #{$mobile} {
+         padding: 0 10px;
+      }
+
+      img{
+         margin: 0 auto;
+      }
+   }
+
+   .arrow{
+      display: none;
+      top: 40%;
+
+      @media #{$mobile} {
+         display: block;
+      }
+
+      &--prev{
+         
+         @media #{$mobile} {
+            left: 0;
+         }
+         @media #{$tablet} {
+            left: -50px;
+         }
+
+         &::after{
+            @include arrow(45px, 1px, #313131, -45deg, 1);
+         }
+      }
+
+      &--next{
+         
+         @media #{$mobile} {
+            right: 0;
+         }
+         @media #{$tablet} {
+            right: -50px;
+         }
+
+         &::after{
+            @include arrow(45px, 1px, #313131, 135deg, 1);
+         }
+      }
+   }
+}
+
+.gallery__slider{
+   display: flex;
+   align-items: center;
+   justify-content: flex-start;
+   padding: 30px 10px;
+   margin: 0 -15px;
+
+   overflow-x: auto;
+   scroll-snap-type: mandatory;
+   scroll-snap-points-x: 160px;
+   -webkit-overflow-scrolling: touch;
+
+   @media #{$mobile} {
+      display: block;
+      overflow-x: inherit;
+      margin: 0;
+      padding: 0;
+   }
+
+   .slide{
+      scroll-snap-align: start;
+      flex: 0 0 160px;
+   }
+
+   @media #{$mobile} {
+      flex: inherit;
+   }
+
+}

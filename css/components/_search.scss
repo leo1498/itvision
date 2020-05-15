@@ -1,0 +1,60 @@
+.search-form{
+    display: flex;
+    margin-top: 20px;
+
+    @media #{$mobile} {
+        margin-top: 40px;
+    }
+
+    .screen-reader-text{
+        display: none;
+    }
+
+    label{
+        width: 100%;
+    }
+
+    .search-field{
+        flex: 1;
+    }
+
+    .search-submit{
+        width: 90px;
+        background-image: url(../img/search.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: content;
+        font-size: 0;
+        text-indent: 9999px;
+        overflow: hidden;
+        cursor: pointer;
+
+        @media #{$mobile} {
+            width: 120px;
+        }
+    }
+}
+
+
+.no-search-found{
+    @media #{$mobile} {
+        p{
+            margin-top: 10px;
+            font-size: 2rem;
+            line-height: 1.5;
+        }
+    }
+}
+
+.navigation{
+    margin-top: 50px;
+
+    .screen-reader-text{
+        display: none;
+    }
+
+    .nav-links{
+        display: flex;
+        justify-content: space-between;
+    }
+}

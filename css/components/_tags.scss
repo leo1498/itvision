@@ -1,0 +1,51 @@
+.tags{
+   margin-bottom: 20px;
+
+   @media #{$mobile} {
+      margin: 70px 0 5px;
+   }
+}
+
+.tags-keywords{
+   display: flex;
+   align-items: flex-start;
+   justify-content: flex-start;
+   flex-direction: column;
+
+   font-size: 1.2rem;
+   font-weight: 700;
+
+   @media #{$mobile} {
+      flex-direction: row;
+      font-size: 1.5rem;
+   }
+
+   &__box{
+      margin-left: -5px;
+
+      @media #{$mobile} {
+         margin-left: 0;
+      }
+   }
+
+   &.tags-topics{
+      .tags-keywords--word{
+         background-color: map-get($map: $colors, $key: primary);
+      }
+   }
+
+   &__title{
+      margin-top: 13px;
+      margin-right: 10px;
+      flex: 0 0 auto;
+      text-transform: lowercase;
+   }
+
+   &--word{
+      display: inline-block;
+      background-color: map-get($map: $colors, $key: secondary-dark);
+      padding: 7px 12px;
+      margin: 5px;
+      color: #fff;
+   }
+}
